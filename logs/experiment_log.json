@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-05-12",
+  "experiment": "SRTP FinBERT Hidden Factor Research - COMPLETE",
+  "model": "yiyanghkust/finbert-tone-chinese (12L, 768D)",
+  "gpu": "RTX 3090 24GB",
+  "data": {
+    "reports": 98699,
+    "stocks_reports": 4037,
+    "daily_price_stocks": 3066,
+    "valid_matched_samples": 76742,
+    "matched_stocks": 2820,
+    "date_range": "2020-03-02 ~ 2026-03-31",
+    "trading_days": 1536
+  },
+  "embedding": {
+    "layers": 12, "hidden_dim": 768,
+    "configs": ["title", "summary", "full"],
+    "total_size_gb": 20,
+    "gpu_speed_texts_per_sec": 325,
+    "total_time_min": 15
+  },
+  "targets": {
+    "primary": "CSI300-adjusted 5-day excess return",
+    "mean_pct": 0.21, "std_pct": 5.91, "signal_noise": 0.035,
+    "also_tested": ["fwd_vol_10d", "fwd_maxdd_10d", "fwd_vol_chg_5d"]
+  },
+  "key_results": {
+    "FHF-Ensemble": {"RankIC": 0.0242, "ICIR": 0.268, "IC_t": 2.26, "sig": "**"},
+    "FinBERT-Sentiment-Neut": {"RankIC": 0.0212, "IC_t": 2.24, "sig": "**"},
+    "TF-IDF-Ridge": {"RankIC": 0.0162, "IC_t": 1.91, "sig": "*"},
+    "FinBERT-Sentiment": {"RankIC": 0.0154, "IC_t": 1.72, "sig": "*", "FM_t": 1.66},
+    "FHF-CLS-PLS": {"RankIC": 0.0131, "IC_t": 1.58, "vs_PCA": "+205%"},
+    "FHF-Gap-PLS-Neut": {"RankIC": -0.0132, "IC_t": -1.74, "sig": "*"},
+    "FinBERT-Sentiment-TDW": {"RankIC": 0.0188, "note": "time-decay agg +22%"},
+    "ReportCount-Log": {"RankIC": 0.0213, "IC_t": 1.87, "sig": "*"},
+    "Dictionary": {"RankIC": -0.0145, "IC_t": -2.02, "sig": "**", "note": "negative: well-known positive words"},
+    "FHF-CLS-PLS_maxdd": {"RankIC": 0.0135, "IC_t": 1.73, "note": "downside risk prediction"}
+  },
+  "gap_completion": {
+    "GAP1_neutralization": "DONE - FinBERT-Neut IC=0.0212 t=2.24**",
+    "GAP2_fama_macbeth": "DONE - FM_t=1.66* with controls",
+    "GAP3_baselines": "DONE - ReportCount/TF-IDF/Dictionary",
+    "GAP4_risk_labels": "DONE - maxdd IC=0.0135 t=1.73*",
+    "GAP5_elasticnet_lgb": "DONE - ENet NaN (convergence); LGB IC=-0.0014",
+    "GAP6_ensemble": "DONE - FHF-Ensemble IC=0.0242 t=2.26**",
+    "GAP7_strategy_backtest": "DONE - absolute negative, IC positive (alignment issue)",
+    "GAP8_timedecay_failure": "DONE - TDW +22% improvement; 706 failure cases analyzed"
+  },
+  "thesis": {
+    "pages": 11, "template": "ZJU CjC", "compiled": true,
+    "file": "thesis/thesis.pdf",
+    "references": 16
+  }
+}
