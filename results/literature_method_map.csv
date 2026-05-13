@@ -1,0 +1,7 @@
+method,local_output,literature_basis,how_it_improves_this_study
+Industry/size/momentum/liquidity neutralization,neutralization and orthogonal IC,Tetlock 2007; Loughran and McDonald 2016,Shows text signal is not only industry or style exposure
+Report coverage control,incremental Fama-MacBeth with report_count_log,Jegadeesh et al. 2004; Bradley et al. 2014,Separates textual information from analyst attention
+Finance-specific NLP baseline comparison,FinBERT sentiment vs dictionary vs TF-IDF,Loughran and McDonald 2011; Araci 2019,Avoids assuming deep models dominate simple finance text baselines
+Placebo and multiple testing,placebo percentiles and FDR/Bonferroni,Harvey Liu and Zhu 2016,Reduces data-mining and accidental-significance concerns
+HAC/Newey-West t-statistics,HAC-adjusted IC mean t-stat,Newey and West 1987,Accounts for time-series dependence in monthly IC
+Conservative portfolio interpretation,backtest diagnostics and cost sensitivity,Tetlock 2007; Loughran and McDonald 2016,Positions weak text signal as alpha input rather than standalone strategy

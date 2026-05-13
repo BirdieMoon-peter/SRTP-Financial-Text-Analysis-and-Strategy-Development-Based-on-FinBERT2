@@ -1,0 +1,188 @@
+{
+  "sample": {
+    "n_reports": 76742,
+    "n_stocks": 2820,
+    "start_date": "2020-03-03",
+    "end_date": "2026-04-01"
+  },
+  "factor_tests": [
+    {
+      "name": "FinBERT-Sentiment-Raw",
+      "rank_ic": 0.015368341911173164,
+      "ic_t": 1.7050736070620238,
+      "newey_west_t": 1.4393672003910432,
+      "icir": 0.19956377102438363,
+      "hit_ratio": 0.5616438356164384,
+      "n_periods": 73,
+      "p_value": 0.09249212129815332,
+      "fdr_p": 0.11561515162269165,
+      "bonferroni_p": 0.4624606064907666
+    },
+    {
+      "name": "FinBERT-Sentiment-IndustryNeutral",
+      "rank_ic": 0.02119549034081136,
+      "ic_t": 2.227839583485936,
+      "newey_west_t": 1.7624280789835916,
+      "icir": 0.26074890062014366,
+      "hit_ratio": 0.5068493150684932,
+      "n_periods": 73,
+      "p_value": 0.02901629287340035,
+      "fdr_p": 0.07254073218350088,
+      "bonferroni_p": 0.14508146436700176
+    },
+    {
+      "name": "FinBERT-Sentiment-FullNeutral",
+      "rank_ic": 0.014527397526754703,
+      "ic_t": 1.5670849552676125,
+      "newey_west_t": 1.1936980399227088,
+      "icir": 0.18341342091831833,
+      "hit_ratio": 0.4931506849315068,
+      "n_periods": 73,
+      "p_value": 0.12147963029927822,
+      "fdr_p": 0.12147963029927822,
+      "bonferroni_p": 0.6073981514963911
+    },
+    {
+      "name": "FinBERT-Sentiment-Consensus",
+      "rank_ic": 0.018690360887165042,
+      "ic_t": 1.973542720793489,
+      "newey_west_t": 1.7893804556143351,
+      "icir": 0.2309857040822428,
+      "hit_ratio": 0.589041095890411,
+      "n_periods": 73,
+      "p_value": 0.05227202119043639,
+      "fdr_p": 0.08712003531739398,
+      "bonferroni_p": 0.26136010595218195
+    },
+    {
+      "name": "FinBERT-Sentiment-NeutConsensus",
+      "rank_ic": 0.023727246857508592,
+      "ic_t": 2.5037843038108294,
+      "newey_west_t": 2.0828294432243792,
+      "icir": 0.2930457872496846,
+      "hit_ratio": 0.589041095890411,
+      "n_periods": 73,
+      "p_value": 0.01455466139898176,
+      "fdr_p": 0.07254073218350088,
+      "bonferroni_p": 0.0727733069949088
+    }
+  ],
+  "incremental_fm": [
+    {
+      "spec": "TextOnly",
+      "coef": 0.00028264000295916673,
+      "t": 0.43074393790999693,
+      "newey_west_t": 0.4174136703308212,
+      "avg_r2": 0.0018045257103268652,
+      "n_periods": 70
+    },
+    {
+      "spec": "Coverage",
+      "coef": 0.00024597238177634574,
+      "t": 0.37967079353137556,
+      "newey_west_t": 0.36731582356524356,
+      "avg_r2": 0.00892340347766498,
+      "n_periods": 70
+    },
+    {
+      "spec": "Style",
+      "coef": 0.00041463376964101707,
+      "t": 0.5695821941031097,
+      "newey_west_t": 0.5692061290253357,
+      "avg_r2": 0.03267164982333495,
+      "n_periods": 70
+    },
+    {
+      "spec": "Liquidity",
+      "coef": 0.0002754636200596715,
+      "t": 0.38500661470699926,
+      "newey_west_t": 0.36194609903394365,
+      "avg_r2": 0.0343801823654981,
+      "n_periods": 70
+    },
+    {
+      "spec": "AllControls",
+      "coef": 0.000440235937524676,
+      "t": 0.5643480623597444,
+      "newey_west_t": 0.5350223982501797,
+      "avg_r2": 0.07721420329427715,
+      "n_periods": 70
+    }
+  ],
+  "window_robustness": [
+    {
+      "name": "Sentiment_on_fwd_excess_1d",
+      "rank_ic": 0.00410711500973454,
+      "ic_t": 0.6893853419504179,
+      "newey_west_t": 0.8596166510997109,
+      "icir": 0.08068645128207366,
+      "hit_ratio": 0.5616438356164384,
+      "n_periods": 73,
+      "p_value": 0.4927966328697
+    },
+    {
+      "name": "Sentiment_on_fwd_excess_2d",
+      "rank_ic": 0.006330491735675073,
+      "ic_t": 1.012139991345963,
+      "newey_west_t": 0.9167901731015529,
+      "icir": 0.11846202571021318,
+      "hit_ratio": 0.5753424657534246,
+      "n_periods": 73,
+      "p_value": 0.3148604456210329
+    },
+    {
+      "name": "Sentiment_on_fwd_excess_5d",
+      "rank_ic": 0.015368341911173164,
+      "ic_t": 1.7050736070620238,
+      "newey_west_t": 1.4393672003910432,
+      "icir": 0.19956377102438363,
+      "hit_ratio": 0.5616438356164384,
+      "n_periods": 73,
+      "p_value": 0.09249212129815332
+    },
+    {
+      "name": "Sentiment_on_fwd_excess_10d",
+      "rank_ic": 0.005005395204201701,
+      "ic_t": 0.7285640731108677,
+      "newey_west_t": 0.8015279717782562,
+      "icir": 0.08527197492278149,
+      "hit_ratio": 0.4657534246575342,
+      "n_periods": 73,
+      "p_value": 0.4686314753899259
+    },
+    {
+      "name": "Sentiment_on_fwd_excess_20d",
+      "rank_ic": -0.0025687551973083396,
+      "ic_t": -0.38648780097038343,
+      "newey_west_t": -0.40813024273657117,
+      "icir": -0.04523497560288347,
+      "hit_ratio": 0.4520547945205479,
+      "n_periods": 73,
+      "p_value": 0.7002752776799372
+    }
+  ],
+  "placebo": {
+    "shuffled_returns": {
+      "mean": 0.00012346751808821126,
+      "std": 0.007331645669049869,
+      "p95": 0.011849576019642849,
+      "p99": 0.018633398675859173,
+      "real_percentile": 0.98,
+      "n": 500
+    },
+    "random_factor": {
+      "mean": -0.0002521965220609473,
+      "std": 0.007203836846761628,
+      "p95": 0.011815835036118428,
+      "p99": 0.0161797724884765,
+      "real_percentile": 0.988,
+      "n": 500
+    }
+  },
+  "interpretation_rules": {
+    "delete_strong_hidden_superiority_claim": true,
+    "state_hidden_layers_as_complementary_only": true,
+    "state_strategy_as_alpha_input_not_standalone": true,
+    "downgrade_gap_mechanism_if_not_supported_by_current_outputs": true
+  }
+}
